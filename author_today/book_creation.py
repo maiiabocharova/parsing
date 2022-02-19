@@ -3,12 +3,14 @@ book = epub.EpubBook()
 
 def create_book_from_chapters(chapters_texts,
                            chapters_names,
-                           book_name = 'Красавица, чудовище и волшебник без лицензии'):
+                           book_name,
+                           book_author,
+                           language = 'ru'):
     # set metadata
 
     book.set_title(book_name)
-    book.set_language('ru')
-    book.add_author('Мария Заболотская')
+    book.set_language(language)
+    book.add_author(book_author)
     book.set_identifier("NA12345")
 
     # add default NCX and Nav file
