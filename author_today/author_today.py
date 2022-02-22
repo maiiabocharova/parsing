@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
 
 from bs4 import BeautifulSoup
@@ -11,7 +12,9 @@ from book_creation import create_book_from_chapters
 
 from authentications import LOGIN, PASSWORD
 
-browser = webdriver.Chrome()
+options = Options()
+options.add_argument('--headless')
+browser = webdriver.Chrome(options=options)
 
 BASE_URL = "https://author.today"
 
